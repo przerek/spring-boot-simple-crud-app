@@ -9,7 +9,6 @@ import java.util.List;
 
 //@RestController //tu serv endpoints
 @Controller
-@RequestMapping(path = "/test")
 public class StudentController {
 
     private final StudentService studentService;
@@ -90,7 +89,7 @@ public class StudentController {
     public String handleDeleteUser(@PathVariable Long studentId,Model model) {
         studentService.deleteStudent(studentId);
 
-        return "redirect:/test/index";
+        return "redirect:/index";
     }
 
 
