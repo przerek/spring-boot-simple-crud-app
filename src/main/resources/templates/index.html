@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:spring="http://java.sun.com/xml/ns/javaee">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <a class="navbar-brand" th:href="@{index}">Lista użytkowników</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" th:href="@{dodaj}">Dodaj użytkownika</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h1>Lista użytkowników</h1>
+
+<table class="table">
+
+    <tr>
+        <th>ID</th>
+        <th>Imie</th>
+        <th>E-mail</th>
+        <th>Data urodzenia</th>
+        <th>Wiek</th>
+        <th>USUN</th>
+
+    </tr>
+
+<tr th:each="book : ${clientsList}">
+    <td><span th:text="${book.id}">  </span></td>
+    <td><span th:text="${book.name}">  </span></td>
+    <td><span th:text="${book.email}">  </span></td>
+    <td><span th:text="${book.dob}">  </span></td>
+    <td><span th:text="${book.age}">  </span></td>
+
+<!--    <td> <a th:href="|@{/delete_user/${user.personId}}|" class="btn btn-danger">Delete</a></td>-->
+    <td><a th:href="@{'/test/delete/'+${book.id}}" class="btn btn-danger">Delete</a>
+
+    </td>
+<!--    <td><a class="btn btn-danger" th:href="@{${book.id}}" >Usuń</a></td>-->
+</tr>
+</table>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
