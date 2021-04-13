@@ -21,13 +21,6 @@ private final StudentRepository studentRepository;
     @ModelAttribute("getStudents")
     public List<Student> getStudents(){
     return studentRepository.findAll();
-
-
-//        return List.of(
-//                new Student(1L, "Mariam", "email", LocalDate.of(2000, Month.JANUARY,5),21),
-//                new Student(2L, "Henryk", "email", LocalDate.of(2000, Month.JANUARY,5),21)
-//        );
-
     }
 
     public void addNewStudent(Student student) {

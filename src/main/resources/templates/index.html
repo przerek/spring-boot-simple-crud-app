@@ -33,18 +33,15 @@
 
     </tr>
 
-<tr th:each="book : ${clientsList}">
-    <td><span th:text="${book.id}">  </span></td>
-    <td><span th:text="${book.name}">  </span></td>
-    <td><span th:text="${book.email}">  </span></td>
-    <td><span th:text="${book.dob}">  </span></td>
-    <td><span th:text="${book.age}">  </span></td>
-
-<!--    <td> <a th:href="|@{/delete_user/${user.personId}}|" class="btn btn-danger">Delete</a></td>-->
-    <td><a th:href="@{'/delete/'+${book.id}}" class="btn btn-danger">Delete</a>
-
+<tr th:each="student : ${studentList}">
+    <td><span th:text="${student.id}">  </span></td>
+    <td><span th:text="${student.name}">  </span></td>
+    <td><span th:text="${student.email}">  </span></td>
+    <td><span th:text="${student.dob}">  </span></td>
+    <td><span th:text="${student.age}">  </span></td>
+    <td><a th:href="@{'/delete/'+${student.id}}" class="btn btn-danger">Delete</a>
     </td>
-<!--    <td><a class="btn btn-danger" th:href="@{${book.id}}" >Usuń</a></td>-->
+
 </tr>
 </table>
 
